@@ -85,7 +85,7 @@ body {
 /* ========================================== TAILWIND STYLES */
 @layer utilities {
   .wrapper {
-    @apply max-w-7xl lg:mx-auto p-5 sm:px-10 md:px-16 xl:px-0 w-full;
+    @apply max-w-7xl lg:mx-auto px-5 sm:px-10 md:px-16 xl:px-0 w-full;
   }
 
   .flex-center {
@@ -121,9 +121,24 @@ body {
   }
 
   /* 20 */
-  .h5-bold {
+  .h4-bold {
     @apply font-bold text-[20px] leading-[28px] sm:text-[22px] sm:leading-[30px] md:text-[24px] md:leading-[32px] lg:text-[28px] lg:leading-[36px];
   }
+
+  .h4-medium {
+    @apply font-medium text-[20px] leading-[28px] sm:text-[22px] sm:leading-[30px] md:text-[24px] md:leading-[32px] lg:text-[28px] lg:leading-[36px];
+  }
+
+    
+  /* 18 */
+  .h5-bold {
+    @apply font-bold text-[18px] leading-[26px] sm:text-[20px] sm:leading-[28px] md:text-[22px] md:leading-[30px] lg:text-[24px] lg:leading-[32px];
+  }
+
+  .h5-medium {
+    @apply font-medium text-[18px] leading-[26px] sm:text-[20px] sm:leading-[28px] md:text-[22px] md:leading-[30px] lg:text-[24px] lg:leading-[32px];
+  }
+
 
   /* 24 */
   .p-bold-24 {
@@ -195,8 +210,68 @@ body {
   }
 
   /* 12 */
+  .p-semibold-12 {
+    @apply text-[12px] font-semibold leading-[20px];
+  }
+
   .p-medium-12 {
     @apply text-[12px] font-medium leading-[20px];
+  }
+
+  .p-regular-12 {
+    @apply text-[12px] font-normal leading-[20px];
+  }
+
+  /* 11 */
+  .p-semibold-11 {
+    @apply text-[11px] font-semibold leading-[16px];
+  }
+
+  .p-medium-11 {
+    @apply text-[11px] font-medium leading-[16px];
+  }
+
+  .p-regular-11 {
+    @apply text-[11px] font-normal leading-[16px];
+  }
+
+  /* 10 */
+  .p-semibold-10 {
+    @apply text-[10px] font-semibold leading-[16px];
+  }
+
+  .p-medium-10 {
+    @apply text-[10px] font-medium leading-[16px];
+  }
+
+  .p-regular-10 {
+    @apply text-[10px] font-normal leading-[16px];
+  }
+  
+  /* 9 */
+  .p-regular-9 {
+    @apply text-[9px] font-normal leading-[14px];
+  }
+
+  .p-medium-9 {
+    @apply text-[9px] font-medium leading-[14px];
+  }
+
+  .p-semibold-9 {
+    @apply text-[9px] font-semibold leading-[14px];
+  }
+
+  /* 8 */
+  .p-regular-8 {
+    @apply text-[8px] font-normal leading-[12px];
+  }
+
+  .p-medium-8 {
+    @apply text-[8px] font-medium leading-[12px];
+  }
+
+  .p-semibold-8 {
+    @apply text-[8px] font-semibold leading-[12px];
   }
 
   /* SHADCN OVERRIDES */
@@ -213,7 +288,7 @@ body {
   }
 
   .button {
-    @apply rounded-full h-[54px] p-regular-16;
+    @apply rounded-full h-[36px] p-regular-10 md:p-regular-12;
   }
 
   .select-item {

@@ -5,7 +5,7 @@ import Image from 'next/image'
 const Footer = () => {
   return (
     <footer className='border-t'>
-        <div className='flex justify-between p-5 gap-5 wrapper'>
+        <div className='flex justify-between p-3 gap-5 wrapper'>
             <Link href={'/'}>
                 <Image src={'/assets/images/logo.svg'} width={128} height={38} alt='Connectify Logo'/>
             </Link>

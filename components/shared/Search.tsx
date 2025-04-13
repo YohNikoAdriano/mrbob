@@ -38,7 +38,7 @@ const Search = ({
   }, [query, searchParams, router]);
 
   return (
-    <div className="flex-center min-h-[54px] w-full overflow-hidden rounded-full bg-gray-50 px-4 py-2">
+    <div className="flex-center min-h-[40px] w-full overflow-hidden rounded-full bg-gray-50 px-3 py-1">
       <Image
         src="/assets/icons/search.svg"
         alt="search"
@@ -51,7 +51,7 @@ const Search = ({
         placeholder={placeholder}
         onChange={(e) => setQuery(e.target.value)}
         value={query}
-        className="p-regular-14 border-0 bg-gray-50 outline-offset-0 placeholder:text-gray-500 focus:border-0 focus-visible:ring-0 focus-visible:ring-offset-0"
+        className="p-regular-10 md:p-regular-11 border-0 bg-gray-50 outline-offset-0 placeholder:text-gray-500 focus:border-0 focus-visible:ring-0 focus-visible:ring-offset-0"
       />
     </div>
   );
