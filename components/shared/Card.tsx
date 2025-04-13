@@ -3,12 +3,14 @@ import { auth } from '@clerk/nextjs/server'
 import Image from 'next/image'
 import Link from 'next/link'
 
+// components
+import { Switch } from "@/components/ui/switch"
+import { Label } from '@/components/ui/label'
+import { DeleteConfirmation } from './DeleteConfirmation'
+
 // lib
 import { IEvent } from '@/lib/database/models/event.model'
 import { formatDateTime } from '@/lib/utils'
-import { DeleteConfirmation } from './DeleteConfirmation'
-import { Switch } from "@/components/ui/switch"
-import { Label } from '../ui/label'
 
 type CardProps = {
   event: IEvent, 
@@ -23,7 +25,7 @@ const Card = async ( {event, hasOrderLink, hidePrice}: CardProps) => {
   const isEventCreator = userId === event.organizer._id.toString()
 
   return (
-    <div className='group relative flex flex-col my-3 w-full max-w-[300px] min-h-[300px] md:min-h-[330px]  overflow-hidden rounded-xl bg-white shadow-md transition-all hover:shadow-lg hover:scale-105 '>
+    <div className='group relative flex flex-col my-3 w-full max-w-[300px] min-h-[300px] md:min-h-[330px] overflow-hidden rounded-xl bg-white shadow-md transition-all hover:shadow-lg hover:scale-105 '>
 
       {/* Background Event */}
       <Link href={`/events/${event._id}`} style={{backgroundImage: `url(${event.imageUrl})`}} className='flex-center flex-grow bg-grey-50 bg-cover bg-center text-gray-500' />

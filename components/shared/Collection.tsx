@@ -1,6 +1,4 @@
-import { IEvent } from '@/lib/database/models/event.model'
-import Card from './Card'
-import Pagination from './Pagination'
+// components
 import {
   Carousel,
   CarouselContent,
@@ -8,6 +6,11 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel"
+import Card from './Card'
+import Pagination from './Pagination'
+
+// lib
+import { IEvent } from '@/lib/database/models/event.model'
 
 type CollectionProps = {
   data: IEvent[],
