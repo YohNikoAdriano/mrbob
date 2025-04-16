@@ -141,3 +141,62 @@ export type SearchParamProps = {
   params: Promise<{ id: string }>;
   searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
 };
+
+
+
+
+// ===========
+export type CreateItemParams = {
+  userId: string;
+  item: {
+    imageUrl: string;
+    name: string;
+    description?: string;
+    customerId: string;
+    status: number;
+    recievedDateTime: Date;
+    deadlineDateTime: Date;
+    isProcessed: Boolean;
+    processedDateTime: Date;
+    isDelivery: Boolean;
+    toDeliverDateTime: Date;
+    deliveryLocation: string;
+    deliveryLocationUrl: string;
+    isCompleted: boolean;
+    completedDateTime: Date;
+    serviceId: string;
+    workerId: string;
+    courierId: string;
+    isComplain: boolean;
+    complainId: string;
+  };
+  path: string;
+};
+
+export type UpdateItemParams = {
+  userId: string;
+  item: {
+    _id: string;
+    imageUrl: string;
+    name: string;
+    description?: string;
+    customerId: string;
+    status: number;
+    recievedDateTime: Date;
+    deadlineDateTime: Date;
+    isProcessed: Boolean;
+    processedDateTime: Date;
+    isDelivery: Boolean;
+    toDeliverDateTime: Date;
+    deliveryLocation: string;
+    deliveryLocationUrl: string;
+    isCompleted: boolean;
+    completedDateTime: Date;
+    serviceId: string;
+    workerId: string;
+    courierId: string;
+    isComplain: boolean;
+    complainId: string;
+  };
+  path: string;
+};

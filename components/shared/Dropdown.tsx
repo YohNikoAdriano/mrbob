@@ -1,7 +1,7 @@
 // react
 import { startTransition, useEffect, useState } from "react";
 
-// chadcn ui
+// shadcn ui
 import {
   Select,
   SelectContent,

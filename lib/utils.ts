@@ -105,6 +105,13 @@ export function removeKeysFromQuery({
   );
 }
 
+export const statusMapping: { [key: number]: string } = {
+  1: "received",
+  2: "completed",
+  3: "processed",
+  4: "to_deliver",
+};
+
 // Handle Error
 export const handleError = (error: unknown) => {
   // console.error(error);

@@ -51,16 +51,16 @@ export default async function Home( {searchParams}: SearchParamProps) {
 
       {/* Dirty Queue */}
       <section id='queue' className="wrapper mt-3 flex flex-col gap-2 md:gap-3">
-        <div className="flex flex-row gap-5">
+        <div className="flex flex-row items-center gap-5">
           <div className="flex items-center shrink-0">
             <div>
               <h2 className="h5-bold">
                 Dirty Queue ⏳
               </h2>
-              <p className="p-medium-9 md:p-medium-10">
+              <span className="p-medium-9 md:p-medium-10">
                 View All
                 <Badge className="ml-1">11</Badge>
-              </p>
+              </span>
             </div>
           </div>
           <div className="grow">
@@ -72,16 +72,16 @@ export default async function Home( {searchParams}: SearchParamProps) {
 
       {/* onProgress */}
       <section id='onProgress' className="wrapper mt-3 flex flex-col gap-2 md:gap-3">
-        <div className="flex flex-row gap-5">
+        <div className="flex flex-row items-center gap-5">
           <div className="flex items-center shrink-0">
             <div>
               <h2 className="h5-bold">
                 Cleaning Process 🧽
               </h2>
-              <p className="p-medium-9 md:p-medium-10">
+              <span className="p-medium-9 md:p-medium-10">
                 View All
                 <Badge className="ml-1">11</Badge>
-              </p>
+              </span>
             </div>
           </div>
           <div className="grow">
@@ -93,16 +93,16 @@ export default async function Home( {searchParams}: SearchParamProps) {
 
       {/* toDeliver */}
       <section id='toDeliver' className="wrapper mt-3 flex flex-col gap-2 md:gap-3">
-        <div className="flex flex-row gap-5">
+        <div className="flex flex-row items-center gap-5">
           <div className="flex items-center shrink-0">
             <div>
               <h2 className="h5-bold">
                 To Deliver 🏁
               </h2>
-              <p className="p-medium-9 md:p-medium-10">
+              <span className="p-medium-9 md:p-medium-10">
                 View All
                 <Badge className="ml-1">11</Badge>
-              </p>
+              </span>
             </div>
           </div>
           <div className="grow">
@@ -114,16 +114,16 @@ export default async function Home( {searchParams}: SearchParamProps) {
 
       {/* Completed */}
       <section id='completed' className="wrapper mt-3 flex flex-col gap-2 md:gap-3">
-        <div className="flex flex-row gap-5">
+        <div className="flex flex-row items-center gap-5">
           <div className="flex items-center shrink-0">
             <div>
               <h2 className="h5-bold">
                 Completed 🎯
               </h2>
-              <p className="p-medium-9 md:p-medium-10">
+              <span className="p-medium-9 md:p-medium-10">
                 View All
                 <Badge className="ml-1">11</Badge>
-              </p>
+              </span>
             </div>
           </div>
           <div className="grow">

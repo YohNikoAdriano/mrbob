@@ -18,9 +18,9 @@ export interface IItem extends Document {
   }
 
   // Status
-  status: "recieved" | "processed" | "to_deliver" | "completed";
+  status: number;
   recievedDateTime: Date;
-  dedlineDateTime: Date;
+  deadlineDateTime: Date;
   isProcessed: Boolean;
   processedDateTime: Date;
   isDelivery: Boolean;
@@ -74,11 +74,11 @@ const ItemSchema = new Schema({
 
   // Status
   status: {
-    type: String,
-    enum: ["recieved", "processed", "to_deliver", "completed"],
-    default: "recieved",
+    type: Number,
+    default: 1,
+    required: true
   },
-  dedlineDateTime: { type: Date, required: true },
+  deadlineDateTime: { type: Date, required: true },
   recievedDateTime: { type: Date, required: true },
   isProcessed: { type: Boolean, required: true, default: false},
   processedDateTime: { type: Date },

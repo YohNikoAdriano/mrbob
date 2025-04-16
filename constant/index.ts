@@ -31,3 +31,25 @@ export const eventDefaultValues = {
   isFree: false,
   url: "",
 };
+
+export const itemDefaultValues = {
+  imageUrl: "",
+  name: "",
+  description: "",
+  status: 1,
+  recievedDateTime: new Date(),
+  deadlineDateTime: new Date(),
+  isProcessed: false,
+  processedDateTime: new Date(),
+  isDelivery: false,
+  toDeliverDateTime: new Date(),
+  deliveryLocation: "",
+  deliveryLocationUrl: "",
+  isCompleted: false,
+  completedDateTime: new Date(),
+  serviceId: "",
+  workerId: "",
+  courierId: "",
+  isComplain: false,
+  complainId: "",
+};
