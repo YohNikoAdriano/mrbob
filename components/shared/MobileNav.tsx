@@ -28,6 +28,7 @@ const MobileNav = () => {
           />
         </SheetTrigger>
         <SheetContent className="flex flex-col gap-6 bg-white md:hidden">
+          <SheetTitle>Explore</SheetTitle>
           <Image
           src="/assets/images/logo.svg"
           alt="Connectify logo"
