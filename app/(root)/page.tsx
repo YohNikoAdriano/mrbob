@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 // components
-import { Button } from "@/components/ui/button";
+// import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge"
 import Search from "@/components/shared/Search";
 import Collection from "@/components/shared/Collection";
@@ -14,6 +14,7 @@ import { getAllEvents } from "@/lib/actions/event.actions";
 
 // types
 import { SearchParamProps } from "@/types";
+import { Button } from "@/components/ui/button";
 
 export default async function Home( {searchParams}: SearchParamProps) {
 
