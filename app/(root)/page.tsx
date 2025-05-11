@@ -14,7 +14,10 @@ import { getAllEvents } from "@/lib/actions/event.actions";
 
 // types
 import { SearchParamProps } from "@/types";
-import { Button } from "@/components/ui/button";
+// import { Button } from "@/components/ui/button";
+// import { Button } from '../../../components/ui/button';
+import { Button } from "../../components/ui/button";
+
 
 export default async function Home( {searchParams}: SearchParamProps) {
 
