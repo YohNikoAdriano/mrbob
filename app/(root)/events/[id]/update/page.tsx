@@ -31,3 +31,14 @@
 // };
 
 // export default UpdateEvents;
+
+export default function UpdateEvents() {
+  return (
+    <div className="p-4">
+      <h1 className="text-2xl font-bold">Update Event</h1>
+      <p className="mt-2 text-gray-600">
+        Ini adalah halaman update event. Tambahkan konten di sini nanti.
+      </p>
+    </div>
+  );
+}

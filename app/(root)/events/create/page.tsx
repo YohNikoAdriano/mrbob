@@ -144,3 +144,14 @@
 // };
 
 // export default CreateEvents;
+
+export default function CreateEvents() {
+  return (
+    <div className="p-4">
+      <h1 className="text-2xl font-bold">Create Events</h1>
+      <p className="mt-2 text-gray-600">
+        Ini adalah halaman create event. Tambahkan konten di sini nanti.
+      </p>
+    </div>
+  );
+}

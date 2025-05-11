@@ -75,3 +75,14 @@
 // };
 
 // export default Orders;
+
+export default function Orders() {
+  return (
+    <div className="p-4">
+      <h1 className="text-2xl font-bold">Orders Page</h1>
+      <p className="mt-2 text-gray-600">
+        Ini adalah halaman orders. Tambahkan konten di sini nanti.
+      </p>
+    </div>
+  );
+}

@@ -98,3 +98,16 @@
 // }
 
 // export default EventDetails
+
+
+export default function EventDetails() {
+  return (
+    <div className="p-4">
+      <h1 className="text-2xl font-bold">Event Page</h1>
+      <p className="mt-2 text-gray-600">
+        Ini adalah halaman detail event. Tambahkan konten di sini nanti.
+      </p>
+    </div>
+  );
+}
+
