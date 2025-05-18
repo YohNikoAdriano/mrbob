@@ -32,7 +32,7 @@ const Card = async ( {event, hasOrderLink, hidePrice}: CardProps) => {
 
       {/* Is Event Creator ? Able to Edit and Delete Their Event */}
       {isEventCreator && !hidePrice && (
-        <div className='absolute right-2 top-2 flex flex-col gap-5 rounded-xl bg-white opacity-80 border-2 border-primary p-2 shadow-sm transition-all'>
+        <div className='absolute right-2 top-2 flex flex-col gap-5 rounded-xl bg-white opacity-80 p-2 shadow-sm transition-all'>
           <Link href={`/events/${event._id}/update`}>
             <Image src="/assets/icons/edit.svg" alt='edit' width={20} height={20} />
           </Link>
@@ -52,18 +52,18 @@ const Card = async ( {event, hasOrderLink, hidePrice}: CardProps) => {
         </div>
 
         {/* Current Status and Action to Updating Status */}
-        <div className='flex justify-between w-full items-center gap-1'>
+        <div className='flex justify-between w-full items-center gap-1 w-full'>
           <div className='flex flex-none rounded-lg bg-primary-50 px-2 py-1 md:py-1.5 h-full items-center'>
             <span className='p-medium-9 md:p-medium-10'>
               DQ
             </span>
           </div>
           <div className='flex flex-1 rounded-lg bg-primary-50 px-2 py-1 md:py-1.5 h-full items-center justify-center space-x-1.5'>
-            <Label htmlFor="airplane-mode" className='p-medium-9 md:p-medium-10 line-clamp-1'>Cleaning</Label>
+            <Label htmlFor="airplane-mode" className='p-medium-9 md:p-medium-10 line-clamp-1'>Done</Label>
             <Switch id="airplane-mode" />
           </div>
         </div>
-
+        {/* c2b594 */}
         {/* All Information */}
         <div className='flex flex-col px-1'>
 

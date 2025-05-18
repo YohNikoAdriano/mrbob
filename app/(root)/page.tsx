@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 // components
-// import { Button } from "@/components/ui/button";
+import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge"
 import Search from "@/components/shared/Search";
 import Collection from "@/components/shared/Collection";
@@ -14,9 +14,6 @@ import { getAllEvents } from "@/lib/actions/event.actions";
 
 // types
 import { SearchParamProps } from "@/types";
-// import { Button } from "@/components/ui/button";
-// import { Button } from '../../../components/ui/button';
-import { Button } from "../../components/ui/button";
 
 
 export default async function Home( {searchParams}: SearchParamProps) {
@@ -53,90 +50,103 @@ export default async function Home( {searchParams}: SearchParamProps) {
         </div>
       </section>
 
-      {/* Dirty Queue */}
-      <section id='queue' className="wrapper mt-3 flex flex-col gap-2 md:gap-3">
-        <div className="flex flex-row items-center gap-5">
-          <div className="flex items-center shrink-0">
-            <div>
-              <h2 className="h5-bold">
-                Dirty Queue ⏳
-              </h2>
-              <span className="p-medium-9 md:p-medium-10">
-                View All
-                <Badge className="ml-1">11</Badge>
-              </span>
-            </div>
-          </div>
-          <div className="grow">
-            <Search />
-          </div>
-        </div>
-        <Collection data={events?.data} emptyTitle= "No Event Found" emptyStateSubtext= "Come Back Later" collectionType="All_Events" limit={6} page={page} totalPages={events?.totalPages} type='home'/>
-      </section>
+      {/* Cleaning Process */}
+      <div className="wrapper grid grid-cols-8 gap-5">
 
-      {/* onProgress */}
-      <section id='onProgress' className="wrapper mt-3 flex flex-col gap-2 md:gap-3">
-        <div className="flex flex-row items-center gap-5">
-          <div className="flex items-center shrink-0">
-            <div>
-              <h2 className="h5-bold">
-                Cleaning Process 🧽
-              </h2>
-              <span className="p-medium-9 md:p-medium-10">
-                View All
-                <Badge className="ml-1">11</Badge>
-              </span>
+        <div className="col-span-4">
+          {/* Dirty Queue */}
+          <section id='queue' className="mt-3 flex flex-col gap-2 md:gap-3">
+            <div className="flex flex-col sm:flex-row sm:items-center sm:gap-5">
+              <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-5 shrink-0">
+                <div>
+                  <h2 className="h5-bold">
+                    Dirty Queue
+                  </h2>
+                  <span className="p-medium-9 md:p-medium-10">
+                    View All
+                    <Badge className="ml-1">11</Badge>
+                  </span>
+                </div>
+              </div>
+              <div className="grow mt-1">
+                <Search />
+              </div>
             </div>
-          </div>
-          <div className="grow">
-            <Search />
-          </div>
-        </div>
-        <Collection data={events?.data} emptyTitle= "No Event Found" emptyStateSubtext= "Come Back Later" collectionType="All_Events" limit={6} page={page} totalPages={events?.totalPages} type='home'/>
-      </section>
-
-      {/* toDeliver */}
-      <section id='toDeliver' className="wrapper mt-3 flex flex-col gap-2 md:gap-3">
-        <div className="flex flex-row items-center gap-5">
-          <div className="flex items-center shrink-0">
-            <div>
-              <h2 className="h5-bold">
-                To Deliver 🏁
-              </h2>
-              <span className="p-medium-9 md:p-medium-10">
-                View All
-                <Badge className="ml-1">11</Badge>
-              </span>
-            </div>
-          </div>
-          <div className="grow">
-            <Search />
-          </div>
-        </div>
-        <Collection data={events?.data} emptyTitle= "No Event Found" emptyStateSubtext= "Come Back Later" collectionType="All_Events" limit={6} page={page} totalPages={events?.totalPages} type='home'/>
-      </section>
-
-      {/* Completed */}
-      <section id='completed' className="wrapper mt-3 flex flex-col gap-2 md:gap-3">
-        <div className="flex flex-row items-center gap-5">
-          <div className="flex items-center shrink-0">
-            <div>
-              <h2 className="h5-bold">
-                Completed 🎯
-              </h2>
-              <span className="p-medium-9 md:p-medium-10">
-                View All
-                <Badge className="ml-1">11</Badge>
-              </span>
-            </div>
-          </div>
-          <div className="grow">
-            <Search />
-          </div>
+            <Collection data={events?.data} emptyTitle= "No Event Found" emptyStateSubtext= "Come Back Later" collectionType="All_Events" limit={6} page={page} totalPages={events?.totalPages} type='home'/>
+          </section>
         </div>
 
-        <Collection data={events?.data} emptyTitle= "No Event Found" emptyStateSubtext= "Come Back Later" collectionType="All_Events" limit={6} page={page} totalPages={events?.totalPages} type='home'/>
-      </section>
+        <div className="col-span-4">
+          {/* onProgress */}
+          <section id='onProgress' className="mt-3 flex flex-col gap-2 md:gap-3">
+            <div className="flex flex-col sm:flex-row sm:items-center sm:gap-5">
+              <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-5 shrink-0">
+                <div>
+                  <h2 className="h5-bold">
+                    Processed
+                  </h2>
+                  <span className="p-medium-9 md:p-medium-10">
+                    View All
+                    <Badge className="ml-1">11</Badge>
+                  </span>
+                </div>
+              </div>
+              <div className="grow mt-1">
+                <Search />
+              </div>
+            </div>
+            <Collection data={events?.data} emptyTitle= "No Event Found" emptyStateSubtext= "Come Back Later" collectionType="All_Events" limit={6} page={page} totalPages={events?.totalPages} type='home'/>
+          </section>
+        </div>
+
+        <div className="col-span-4">
+          {/* toDeliver */}
+          <section id='toDeliver' className="mt-3 flex flex-col gap-2 md:gap-3">
+            <div className="flex flex-col sm:flex-row sm:items-center sm:gap-5">
+              <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-5 shrink-0">
+                <div>
+                  <h2 className="h5-bold">
+                    To Deliver
+                  </h2>
+                  <span className="p-medium-9 md:p-medium-10">
+                    View All
+                    <Badge className="ml-1">11</Badge>
+                  </span>
+                </div>
+              </div>
+              <div className="grow mt-1">
+                <Search />
+              </div>
+            </div>
+            <Collection data={events?.data} emptyTitle= "No Event Found" emptyStateSubtext= "Come Back Later" collectionType="All_Events" limit={6} page={page} totalPages={events?.totalPages} type='home'/>
+          </section>
+        </div>
+
+        <div className="col-span-4">
+          {/* Completed */}
+          <section id='completed' className="mt-3 flex flex-col gap-2 md:gap-3">
+            <div className="flex flex-col sm:flex-row sm:items-center sm:gap-5">
+              <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-5 shrink-0">
+                <div>
+                  <h2 className="h5-bold">
+                    Completed
+                  </h2>
+                  <span className="p-medium-9 md:p-medium-10">
+                    View All
+                    <Badge className="ml-1">11</Badge>
+                  </span>
+                </div>
+              </div>
+              <div className="grow mt-1">
+                <Search />
+              </div>
+            </div>
+
+            <Collection data={events?.data} emptyTitle= "No Event Found" emptyStateSubtext= "Come Back Later" collectionType="All_Events" limit={6} page={page} totalPages={events?.totalPages} type='home'/>
+          </section>
+        </div>
+
+      </div>
     </>
   );
 }

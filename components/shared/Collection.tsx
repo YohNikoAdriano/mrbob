@@ -31,7 +31,7 @@ const Collection = ({data, emptyTitle, emptyStateSubtext, collectionType, limit,
       {data.length > 0 ? (
         type === 'home' ? (
           // Home Page: Carousel Layout
-          <Carousel className="w-11/12 mx-auto" opts={{slidesToScroll: 2}}>
+          <Carousel className="w-11/12 mx-auto" opts={{slidesToScroll: 1}}>
             <CarouselContent>
               {data.map((event) => {
                 const hasOrderLink = collectionType === "Event_Organized";
@@ -40,7 +40,7 @@ const Collection = ({data, emptyTitle, emptyStateSubtext, collectionType, limit,
                 return (
                   <CarouselItem
                     key={event._id}
-                    className="basis-1/2 sm:basis-1/3 md:basis-1/4 lg:basis-1/5"
+                    className="basis-1/1 sm:basis-1/2 lg:basis-1/3 w-full"
                   >
                     <Card
                       event={event}
