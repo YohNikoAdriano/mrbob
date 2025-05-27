@@ -206,7 +206,7 @@ const ItemForm = ({ userId, type, item, itemId }: ItemFormProps) => {
 
           <div className="flex flex-row gap-3">
             {/* Status */}
-            <FormField
+            {/* <FormField
               control={form.control}
               name="status"
               render={({ field }) => (
@@ -220,7 +220,7 @@ const ItemForm = ({ userId, type, item, itemId }: ItemFormProps) => {
                   <FormMessage />
                 </FormItem>
               )}
-            />
+            /> */}
 
             {/* Service */}
             <FormField
@@ -233,6 +233,32 @@ const ItemForm = ({ userId, type, item, itemId }: ItemFormProps) => {
                       onChangeHandler={field.onChange}
                       value={field.value}
                     />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+
+            {/* isDelivery */}
+            <FormField
+              control={form.control}
+              name="isDelivery"
+              render={({ field }) => (
+                <FormItem className="w-full">
+                  <FormControl>
+                    <div className="flex items-center h-[36px] md:h-[45px] w-full overflow-hidden rounded-full bg-grey-50 p-regular-10 md:p-regular-12 px-3 md:px-6 py-2 md:py-3">
+                    <Checkbox
+                        onCheckedChange={field.onChange}
+                        id="isDelivery"
+                        className="mr-2 h-5 w-5 border-2 border-primary-500"
+                      />
+                      <FormLabel
+                        htmlFor="isDelivery"
+                        className="whitespace-nowrap pr-2 leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                      >
+                        Pickup & Delivery
+                      </FormLabel>
+                    </div>
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -274,6 +300,7 @@ const ItemForm = ({ userId, type, item, itemId }: ItemFormProps) => {
                 </FormItem>
               )}
             />
+            
           </div>
 
           <div className="flex flex-row gap-3">
@@ -352,7 +379,7 @@ const ItemForm = ({ userId, type, item, itemId }: ItemFormProps) => {
                   <FormControl>
                     <div className="flex-center h-[36px] md:h-[45px] overflow-hidden rounded-full bg-grey-50 p-regular-10 md:p-regular-12 px-3 md:px-6 py-2 md:py-3">
                       <Image
-                        src="/assets/icons/location-grey.svg"
+                        src="/assets/icons/link.svg"
                         alt="Calendar"
                         width={24}
                         height={24}
@@ -361,60 +388,6 @@ const ItemForm = ({ userId, type, item, itemId }: ItemFormProps) => {
                         placeholder="Delivery Location Url"
                         className="input-field ml-1"
                         {...field}
-                      />
-                    </div>
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-          </div>
-
-          <div className="flex flex-row gap-3">
-            {/* isDelivery */}
-            <FormField
-              control={form.control}
-              name="isDelivery"
-              render={({ field }) => (
-                <FormItem className="w-full">
-                  <FormControl>
-                    <div className="flex items-center h-[36px] md:h-[45px] w-full overflow-hidden rounded-full bg-grey-50 p-regular-10 md:p-regular-12 px-3 md:px-6 py-2 md:py-3">
-                      <FormLabel
-                        htmlFor="isDelivery"
-                        className="whitespace-nowrap pr-2 leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-                      >
-                        Pickup & Delivery
-                      </FormLabel>
-                      <Checkbox
-                        onCheckedChange={field.onChange}
-                        id="isDelivery"
-                        className="mr-2 h-5 w-5 border-2 border-primary-500"
-                      />
-                    </div>
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-
-            {/* isDelivery */}
-            <FormField
-              control={form.control}
-              name="isDelivery"
-              render={({ field }) => (
-                <FormItem className="w-full">
-                  <FormControl>
-                    <div className="flex items-center h-[36px] md:h-[45px] w-full overflow-hidden rounded-full bg-grey-50 p-regular-10 md:p-regular-12 px-3 md:px-6 py-2 md:py-3">
-                      <FormLabel
-                        htmlFor="isDelivery"
-                        className="whitespace-nowrap pr-2 leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-                      >
-                        Pickup & Delivery
-                      </FormLabel>
-                      <Checkbox
-                        onCheckedChange={field.onChange}
-                        id="isDelivery"
-                        className="mr-2 h-5 w-5 border-2 border-primary-500"
                       />
                     </div>
                   </FormControl>

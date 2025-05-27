@@ -34,7 +34,7 @@ export default async function Home( {searchParams}: SearchParamProps) {
   return (
     <>
       {/* Hero */}
-      <section className="hidden sm:block bg-primary-50 bg-dotted-pattern bg-contain mb-5 py-3 sm:py-0 md:py-3">
+      {/* <section className="hidden sm:block bg-primary-50 bg-dotted-pattern bg-contain mb-5 py-3 sm:py-0 md:py-3">
         <div className="wrapper items-center grid gap-3 sm:grid-cols-8 sm:min-h-[150px] md:grid-cols-10 md:min-h-[140px] lg:grid-cols-12 lg:min-h-[150px]">
           <Image src={'/assets/images/mrbob.png'} width={1000} height={1000} alt='Mr Bob Hero' className="sm:col-span-2 md:col-span-2 lg:col-span-2 max-h-[70vh] object-contain object-center 2xl:max-h-[50vh]"/>
           <div className="sm:col-span-6 md:col-span-8 lg:col-span-10 flex flex-col justify-center gap-2">
@@ -47,6 +47,67 @@ export default async function Home( {searchParams}: SearchParamProps) {
             </Button>
           </div>
           
+        </div>
+      </section> */}
+
+      <section className="wrapper mb-3 py-3">
+        <div className="rounded-xl bg-primary-50 
+        items-center grid gap-3 px-5 py-5 sm:py-0
+        sm:grid-cols-10 sm:min-h-[175px]
+        md:grid-cols-10 md:min-h-[190px]
+        lg:grid-cols-12 lg:min-h-[150px]">
+
+          {/* Grid 1 */}
+          <Image src={'/assets/images/mrbob.png'} width={1000} height={1000} alt='Mr Bob Hero' className="
+          sm:col-span-3
+          md:col-span-3 
+          lg:col-span-3
+          hidden sm:block
+          max-h-[70vh] object-contain object-center 2xl:max-h-[50vh]"/>
+
+          {/* Grid 2 */}
+          <div className="flex flex-col justify-center gap-2
+          sm:col-span-4 
+          md:col-span-4
+          lg:col-span-5">
+            <h2 className="h5-bold md:h5-bold">Mr Bob's Shoescare</h2>
+            <p className="p-medium-10 md:p-medium-12">Our team is committed to providing top-quality cleaning, restoration, and maintenance, ensuring every customer experiences excellence</p>
+            <Button asChild className="button w-fit">
+              <Link href='#events'>
+                Dashboard
+              </Link>
+            </Button>
+          </div>
+
+          {/* Grid 3 */}
+          <div className="flex flex-col justify-center gap-2
+          sm:col-span-3 
+          md:col-span-3
+          lg:col-span-4">
+            <Button asChild className="button w-full">
+              <Link href='#events'>
+                Add New Items
+              </Link>
+            </Button>
+            <div className="flex gap-2">
+              <Button asChild className="button w-full">
+                <Link href='#events'>
+                  Analitics
+                </Link>
+              </Button>
+              <Button asChild className="button w-full">
+                <Link href='#events'>
+                  Options
+                </Link>
+              </Button>
+            </div>
+            <Button asChild className="button w-full">
+              <Link href='#events'>
+                Dashboard
+              </Link>
+            </Button>
+          </div>
+
         </div>
       </section>
 

@@ -52,7 +52,7 @@ const Card = async ( {event, hasOrderLink, hidePrice}: CardProps) => {
         </div>
 
         {/* Current Status and Action to Updating Status */}
-        <div className='flex justify-between w-full items-center gap-1 w-full'>
+        <div className='flex justify-between w-full items-center gap-1'>
           <div className='flex flex-none rounded-lg bg-primary-50 px-2 py-1 md:py-1.5 h-full items-center'>
             <span className='p-medium-9 md:p-medium-10'>
               DQ
