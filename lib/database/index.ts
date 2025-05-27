@@ -10,7 +10,7 @@ const clientOptions: ConnectOptions = {
     strict: true,
     deprecationErrors: true,
   },
-  dbName: 'connectify',
+  dbName: 'mrbob',
   bufferCommands: false,
 };
 
