@@ -4,6 +4,8 @@ import { WebhookEvent, clerkClient } from '@clerk/nextjs/server'
 import { NextResponse } from 'next/server'
 
 import { createUser, updateUser, deleteUser } from '@/lib/actions/user.actions'
+import { connectToDB } from '@/lib/database'
+import User from '@/lib/database/models/user.model'
 
 export async function POST(req: Request) {
   const WEBHOOK_SECRET = process.env.WEBHOOK_SECRET
@@ -50,12 +52,18 @@ export async function POST(req: Request) {
 
   // Do something with payload
   // For this guide, log payload to console
+  
   const eventType = evt.type
   console.log("Webhook received eventType:", eventType);
 
-
+    // When User Created
     if( eventType === 'user.created'){
         const { id, email_addresses, image_url, first_name, last_name, username } = evt.data
+
+        // Role Handling
+        await connectToDB()
+        const isFirstUser = (await User.countDocuments()) === 0;
+        const role = isFirstUser ? "owner" : "worker";
     
         const user = {
             clerkId: id,
@@ -64,7 +72,7 @@ export async function POST(req: Request) {
             firstName: first_name!,
             lastName: last_name!,
             photo: image_url,
-            role: 'worker'
+            role: role!
         }
         
         const newUser = await createUser(user)
@@ -75,6 +83,7 @@ export async function POST(req: Request) {
           result = await client.users.updateUserMetadata(id, {
             publicMetadata: {
               userId: newUser._id,
+              role: newUser.role
             },
           });
           console.log(result)
@@ -83,6 +92,7 @@ export async function POST(req: Request) {
         return NextResponse.json({message: 'OK', user: newUser, result:result})
     }
 
+    // When User Updated
     if (eventType === "user.updated") {
         const { id, image_url, first_name, last_name, username } = evt.data;
     
@@ -98,6 +108,7 @@ export async function POST(req: Request) {
         return NextResponse.json({ message: "OK", user: updatedUser });
       }
     
+      // When User Deleted
       if (eventType === "user.deleted") {
         const { id } = evt.data;
     
